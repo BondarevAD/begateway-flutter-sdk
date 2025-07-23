@@ -89,7 +89,7 @@ Future<void> fetchPayCard(
       return;
     } else if (answear == 'error') {
       await appState.answearBegateway(answearSend);
-      await appState.updateIsBegateway(false);
+      // await appState.updateIsBegateway(false);
       appState.setIsLoading(false);
       return;
     }
