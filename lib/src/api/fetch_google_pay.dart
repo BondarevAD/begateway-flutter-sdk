@@ -96,7 +96,7 @@ Future<void> fetchGooglePay(
     await http.post(url, headers: headers, body: jsonEncode(requestData));
     //Map<String, dynamic> answear = await json.decode(response.body);
 
-    fetchPayCheck(appState);
+    await fetchPayCheck(appState);
   } catch (e) {
     // Error Handling
 
@@ -106,7 +106,8 @@ Future<void> fetchGooglePay(
 }
 
 const token = {
-  "signature":"MEUCI+slJGaKBHZmphgIgJ8GKHlrPKnQcObF/lGfYjDmt1pu3kzPOYoBmdjdUFvw\\u003d",
+  "signature":
+      "MEUCI+slJGaKBHZmphgIgJ8GKHlrPKnQcObF/lGfYjDmt1pu3kzPOYoBmdjdUFvw\\u003d",
   "intermediateSigningKey": {
     "signedKey": {
       "keyValue":

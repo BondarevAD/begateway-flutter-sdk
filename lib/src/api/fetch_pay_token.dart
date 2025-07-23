@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:begateway_flutter_sdk/src/constants/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:begateway_flutter_sdk/src/providers/app_state.dart';
@@ -68,9 +67,9 @@ Future fetchPayToken(
     if (response.statusCode == 201) {
       // Successful request
       String token = await json.decode(response.body)["checkout"]["token"];
-     return token;
+      return token;
     } else {
-      appState.answearBegateway(answearSend);
+      await appState.answearBegateway(answearSend);
     }
   } catch (e) {
     // Error Handling

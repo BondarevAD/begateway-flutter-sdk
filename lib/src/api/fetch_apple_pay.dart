@@ -83,10 +83,10 @@ Future<void> fetchApplePay(
   };
   try {
     //final response =
-        await http.post(url, headers: headers, body: jsonEncode(requestData));
+    await http.post(url, headers: headers, body: jsonEncode(requestData));
     //Map<String, dynamic> answear = await json.decode(response.body);
 
-    fetchPayCheck(appState);
+    await fetchPayCheck(appState);
   } catch (e) {
     // Error Handling
 
@@ -94,5 +94,3 @@ Future<void> fetchApplePay(
     debugPrint('Error: $e');
   }
 }
-
-
