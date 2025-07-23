@@ -90,8 +90,8 @@ class Begateway extends StatefulWidget {
     this.errorCardholderText,
     this.errorTextHide,
   });
-  final void Function(bool) showIsBegateway;
-  final void Function(Map<String, dynamic>) getAnswearFromBegateway;
+  final Future<void> Function(bool) showIsBegateway;
+  final Future<void> Function(Map<String, dynamic>) getAnswearFromBegateway;
   final String publicKey;
   final bool test;
   final String transactionType;

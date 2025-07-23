@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppState extends ChangeNotifier {
-  final void Function(bool) updateIsBegateway;
-  final void Function(Map<String, dynamic>) answearBegateway;
+  final Future<void> Function(bool) updateIsBegateway;
+  final Future<void> Function(Map<String, dynamic>) answearBegateway;
   final String publicKey;
   final bool test;
   final String transactionType;
@@ -93,7 +93,7 @@ class AppState extends ChangeNotifier {
   final String? errorExpireDateText;
   final String? errorCvcCvvText;
   final String? errorCardholderText;
-   final bool? errorTextHide;
+  final bool? errorTextHide;
 
   AppState(
     this.updateIsBegateway,
@@ -158,7 +158,6 @@ class AppState extends ChangeNotifier {
     this.cardholderTitleColor,
     this.cardholderTitleSize,
     this.cardholderTitleText,
-
     this.cardholderHintHide,
     this.cardholderTitleHide,
     //border

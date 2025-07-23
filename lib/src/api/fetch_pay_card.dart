@@ -53,7 +53,7 @@ Future<void> fetchPayCard(
     final response = await http.post(url,
         headers: headersData, body: jsonEncode(paymentData));
     String answear = await json.decode(response.body)["response"]["status"];
-    
+
     Map<String, dynamic> answearSend = await json.decode(response.body);
     String? brand =
         await json.decode(response.body)["response"]["credit_card"]["brand"];
@@ -88,14 +88,13 @@ Future<void> fetchPayCard(
       fetchPayCheck(appState);
       return;
     } else if (answear == 'error') {
-      appState.answearBegateway(answearSend);
-      appState.updateIsBegateway(false);
+      await appState.answearBegateway(answearSend);
+      await appState.updateIsBegateway(false);
       appState.setIsLoading(false);
       return;
     }
   } catch (e) {
-     appState.setIsLoading(false);
+    appState.setIsLoading(false);
     debugPrint('Error: $e');
-   
   }
 }
